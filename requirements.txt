@@ -1,0 +1,7 @@
+-e .
+dnspython==1.12.0
+ipaddr==2.1.11
+ipwhois==0.10.3
+python-geoip==1.2
+python-geoip-geolite2==2015.303
+wheel==0.26.0

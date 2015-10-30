@@ -1,0 +1,7 @@
+-r requirements.txt
+coverage
+ipdb
+ipython
+flake8
+mock
+pytest
