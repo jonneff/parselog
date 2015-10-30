@@ -5,6 +5,8 @@ from geoip import geolite2
 from dateutil import parser
 from datetime import datetime
 from dateutil import tz
+from ipwhois import IPDefinedError
+import logging
 
 class ParseLog(object):
     # def __init__(self): 
@@ -23,7 +25,7 @@ class ParseLog(object):
             or the original invalid log line and 0
         """
         # Use regular expression with match groups to extract data from log.
-        APACHE_ACCESS_LOG_PATTERN = '^(\S+) (\S+) (\S+) \[([\w:/]+\s[+\-]\d{4})\] "(\S+) (\S+)\s*(\S*)\s*" (\d{3}) (\S+) ([ ^"]*) ([ ^"]*)'
+        APACHE_ACCESS_LOG_PATTERN = '^(\S+) (\S+) (\S+) \[([\w:/]+\s[+\-]\d{4})\] "(\S+) (\S+)\s*(\S*)\s*" (\d{3}) (\S+) \"(\S+)\" \"(.*)\"'
         match = re.search(APACHE_ACCESS_LOG_PATTERN, line)
 
         # If no match, line is not formatted correctly.  Return log line with flag = 0 (error).
@@ -31,7 +33,7 @@ class ParseLog(object):
             return (line, 0)
 
         # Parse Apache timestamp and convert to seconds since epoch.
-        datetime = self.parse_apache_time(match.group(4))
+        dt = self.parse_apache_time(match.group(4))
 
         # Set other return values
         uri = match.group(6)
@@ -41,7 +43,7 @@ class ParseLog(object):
         # call ip_lookup(ip) to get org, lat, lon, and isp
         org, isp, lat, lon = self.ip_lookup(ip)
         result = {
-            'datetime': datetime, 
+            'datetime': dt, 
             'uri': uri,
             'referer': referer,
             'ip': ip,
@@ -62,20 +64,32 @@ class ParseLog(object):
         # given ip, look up org, isp, lat and lon
         # need some try-catch blocks here for exception handling
         # for IPWhois need to catch IPDefinedError
-        obj = IPWhois(ip)
-        results = obj.lookup(get_referral=True)
-        org = results['nets'][-1]['description']
-        isp = results['nets'][0]['description']
+        try:
+            obj = IPWhois(ip)
+            results = obj.lookup(get_referral=True)
+            org = results['nets'][-1]['description']
+            isp = results['nets'][0]['description']
+        except IPDefinedError:
+            # log bad ip and error
+            org = isp = None    
+
         # geolite2 returns NoneType if no match
-        match = geolite2.lookup(ip)
-        lat = match[0]
-        lon = match[1]
+        try:
+            match = geolite2.lookup(ip)
+            if match:
+                lat = match.location[0]
+                lon = match.location[1]
+            else:
+                # log unable to find lat/lon for this ip
+                lat = lon = None
+        except ValueError:
+            # log bad ip and error
+            lat = lon = None
+
         return org, isp, lat, lon   
 
-# if __name__ == '__main__': 
-#     parse = ParseLog() 
-#     line = parse.parse_line(line)
-#     while line:
-#         print line
+if __name__ == '__main__':
+    parse = ParseLog() 
+
 
 

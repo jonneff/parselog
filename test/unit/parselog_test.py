@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 import unittest
 from app.parselog import ParseLog
@@ -11,7 +13,7 @@ class TestParseLog(unittest.TestCase):
         self.badlog = open('data/test_bad.log', 'r')
 
     def test_parse_apache_time_returns_correct_result(self):
-        datetime = parse.parse_apache_time("30/Aug/2015:05:13:53 +0200")
+        datetime = self.parse.parse_apache_time("30/Aug/2015:05:13:53 +0200")
         exp_datetime = 1440904433
         self.assertEqual(exp_datetime, datetime)
 
@@ -56,8 +58,9 @@ class TestParseLog(unittest.TestCase):
             'lon': -122.118,
             'isp': 'Comcast Business Communications, LLC'
         }  
-        self.assertDictEqual(expected, actual)
         self.assertEqual(1, flag)
+        self.assertDictEqual(expected, actual)
+        
 
     def __del__(self):
         # close files in destructor method
@@ -66,5 +69,6 @@ class TestParseLog(unittest.TestCase):
         self.goodlog.close()
         self.badlog.close()
 
-if __name__ == '__main__': unittest.main()
+if __name__ == '__main__':
+    unittest.main()
 
