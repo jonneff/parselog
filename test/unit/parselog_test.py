@@ -1,12 +1,14 @@
+import sys
 import unittest
-from cc-svds import ParseLog
+from app.parselog import ParseLog
+
 
 class TestParseLog(unittest.TestCase): 	
     # CONSIDER ADDING PYTEST FIXTURES FOR CONSTANTS 
     def setUp( self): 
-        parse = ParseLog() 
-        goodlog = open('test_good.log','r')
-        badlog = open('test_bad.log', 'r')
+        self.parse = ParseLog() 
+        self.goodlog = open('data/test_good.log','r')
+        self.badlog = open('data/test_bad.log', 'r')
 
     def test_parse_apache_time_returns_correct_result(self):
         datetime = parse.parse_apache_time("30/Aug/2015:05:13:53 +0200")
@@ -32,7 +34,7 @@ class TestParseLog(unittest.TestCase):
         self.assertEqual(exp_lon, lon)
 
     def test_parse_line_method_handles_malformed_line(self):
-        line = badlog.readline()
+        line = self.badlog.readline()
         result = self.parse.parse_line(line)
         actualLine = result[0]
         flag = result[1]
@@ -40,7 +42,7 @@ class TestParseLog(unittest.TestCase):
         self.assertEqual(0, flag)
 
     def test_parse_line_method_returns_correct_result(self):
-        line = goodlog.readline()
+        line = self.goodlog.readline()
         result = self.parse.parse_line(line) 
         actual = result[0]
         flag = result[1]
