@@ -8,12 +8,19 @@ Data Engineering Coding Challenge – 2015
 Write a program that reads in the dataset (access.log), and writes to a file (access_log.out) the following:
 
 date & time request was processed by the web server as epoch (from the file)
+
 uri user click on (from the file)
+
 referer (from the file)
+
 ip address (from the file)
+
 organization (from the ip address)
+
 latitude (from the ip address)
+
 longitude (from the ip address)
+
 isp name (from the ip address)
 
 HINT: google “ip lookup”.  
