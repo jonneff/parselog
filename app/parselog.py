@@ -42,7 +42,7 @@ class ParseLog(object):
         # If no match, line is not formatted correctly.  Return log line with flag = 0 (error).
         if match is None:
             logger.warn('ParseLog could not parse this line:  %s', line)
-            return (line, 0)
+            return None
 
         # Parse Apache timestamp and convert to seconds since epoch.
         logger.debug('match.group(4) = date-time string %s', match.group(4))
@@ -68,7 +68,7 @@ class ParseLog(object):
             'lon': lon,
             'isp': isp
         }
-        return (result, 1)
+        return result
 
     def parse_apache_time(self, timestamp):
         d = parser.parse(timestamp.replace(':', ' ', 1))
@@ -81,7 +81,9 @@ class ParseLog(object):
         # need some try-catch blocks here for exception handling
         # for IPWhois need to catch IPDefinedError
         try:
-            obj = IPWhois(ip)
+            obj = IPWhois(ip) # check docs for timeout param.  
+            # exponential dropoff:  some factor by which I try a few times, an order of mag each time.  
+            #  if it takes more than 10 seconds or so, then give up.  
             results = obj.lookup(get_referral=True)
             org = results['nets'][-1]['description']
             isp = results['nets'][0]['description']

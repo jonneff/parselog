@@ -38,16 +38,11 @@ class TestParseLog(unittest.TestCase):
     def test_parse_line_method_handles_malformed_line(self):
         line = self.badlog.readline()
         result = self.parse.parse_line(line)
-        actualLine = result[0]
-        flag = result[1]
-        self.assertEqual(line, actualLine)
-        self.assertEqual(0, flag)
+        self.assertIsNone(result)
 
     def test_parse_line_method_returns_correct_result(self):
         line = self.goodlog.readline()
-        result = self.parse.parse_line(line) 
-        actual = result[0]
-        flag = result[1]
+        actual = self.parse.parse_line(line) 
         expected = {   
             'datetime': 1389721010,  
             'uri': '/svds.com',
@@ -58,7 +53,6 @@ class TestParseLog(unittest.TestCase):
             'lon': -122.118,
             'isp': 'Comcast Business Communications, LLC'
         }  
-        self.assertEqual(1, flag)
         self.assertDictEqual(expected, actual)
         
 
