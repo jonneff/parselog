@@ -14,6 +14,8 @@ def main():
     result = parse.parse_line(line)
     if result:
       json.dump(result, fout)
+  f.close()
+  fout.close()
 
 if __name__ == '__main__':
   main()
