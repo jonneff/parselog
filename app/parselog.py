@@ -87,7 +87,7 @@ class ParseLog(object):
             isp = results['nets'][0]['description']
         except (IPDefinedError, ASNLookupError, ASNRegistryError, WhoisLookupError, HostLookupError, BlacklistError) as e:
             # log bad ip and error
-            logger.warn('%s from IPWhois on IP %s, setting org & isp to None', e, ip)
+            logger.error('%s from IPWhois on IP %s, setting org & isp to None', e, ip)
             org = isp = None 
         except ValueError:
             logger.error('Set org & isp to None, ValueError from IPWhois for IP %s', ip)
