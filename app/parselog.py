@@ -5,7 +5,7 @@ from geoip import geolite2
 from dateutil import parser
 from datetime import datetime
 from dateutil import tz
-from ipwhois import IPDefinedError
+from ipwhois import IPDefinedError, ASNLookupError, ASNRegistryError, WhoisLookupError, HostLookupError, BlacklistError
 import logging
 
 
@@ -81,15 +81,13 @@ class ParseLog(object):
         # need some try-catch blocks here for exception handling
         # for IPWhois need to catch IPDefinedError
         try:
-            obj = IPWhois(ip) # check docs for timeout param.  
-            # exponential dropoff:  some factor by which I try a few times, an order of mag each time.  
-            #  if it takes more than 10 seconds or so, then give up.  
+            obj = IPWhois(ip, timeout = 10) # times out after 10 seconds  
             results = obj.lookup(get_referral=True)
             org = results['nets'][-1]['description']
             isp = results['nets'][0]['description']
-        except IPDefinedError:
+        except (IPDefinedError, ASNLookupError, ASNRegistryError, WhoisLookupError, HostLookupError, BlacklistError) as e:
             # log bad ip and error
-            logger.warn('Set org & isp to None, IPDefinedError from IPWhois for IP %s', ip)
+            logger.warn('%s from IPWhois on IP %s, setting org & isp to None', e, ip)
             org = isp = None 
         except ValueError:
             logger.error('Set org & isp to None, ValueError from IPWhois for IP %s', ip)
