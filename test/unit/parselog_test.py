@@ -18,7 +18,7 @@ class TestParseLog(unittest.TestCase):
         self.assertEqual(exp_datetime, datetime)
 
     def test_ip_lookup_method_returns_correct_result(self):
-        org, isp, lat, lon = self.parse.ip_lookup('74.125.225.229')
+        org, lat, lon, isp = self.parse.ip_lookup('74.125.225.229')
         exp_org = exp_isp = 'Google Inc.'
         exp_lat = 37.419200000000004
         exp_lon = -122.0574
@@ -28,8 +28,18 @@ class TestParseLog(unittest.TestCase):
         self.assertEqual(exp_lon, lon)
 
     def test_ip_lookup_method_handles_bad_ip(self):
-        org, isp, lat, lon = self.parse.ip_lookup('0.0.0.0')
+        org, lat, lon, isp = self.parse.ip_lookup('0.0.0.0')
         exp_org = exp_isp = exp_lat = exp_lon = None
+        self.assertEqual(exp_org, org)
+        self.assertEqual(exp_isp, isp)
+        self.assertEqual(exp_lat, lat)
+        self.assertEqual(exp_lon, lon)
+
+    def test_ip_lookup_method_handles_really_bad_ip(self):
+        org, lat, lon, isp = self.parse.ip_lookup('46.246.49.254')
+        exp_org = 'Portlane Network'
+        exp_isp = 'PrivActually Ltd'
+        exp_lat = exp_lon = None
         self.assertEqual(exp_org, org)
         self.assertEqual(exp_isp, isp)
         self.assertEqual(exp_lat, lat)
@@ -43,17 +53,9 @@ class TestParseLog(unittest.TestCase):
     def test_parse_line_method_returns_correct_result(self):
         line = self.goodlog.readline()
         actual = self.parse.parse_line(line) 
-        expected = {   
-            'datetime': 1389721010,  
-            'uri': '/svds.com',
-            'referer': 'http://www.svds.com/rockandroll/',
-            'ip': '198.0.200.105',
-            'org': 'SILICON VALLEY DATA SCIENC',
-            'lat': 37.8858,
-            'lon': -122.118,
-            'isp': 'Comcast Business Communications, LLC'
-        }  
-        self.assertDictEqual(expected, actual)
+        expected = [1389721010,'/svds.com','http://www.svds.com/rockandroll/','198.0.200.105','SILICON VALLEY DATA SCIENC', 
+                    37.8858, -122.118, 'Comcast Business Communications, LLC']
+        self.assertEqual(expected, actual)
         
 
     def __del__(self):

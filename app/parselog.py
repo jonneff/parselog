@@ -10,7 +10,7 @@ import logging
 
 
 logger = logging.getLogger(__name__)
-handler = logging.FileHandler('parselog.log')
+handler = logging.FileHandler('data/parselog.log')
 handler.setLevel(logging.INFO)
 logging.basicConfig(level=logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -18,15 +18,15 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 class ParseLog(object):
-    # def __init__(self): 
-    # any initialization
+    def __init__(self): 
+        self.iptable = {}
         
     def parse_line(self, line): 
         """
         Parse log line to get date & time, uri, referer, ip address.
         Call self.ip_lookup() to get org, lat, lon and isp.
-        Assumes each line in log file is in the Apache Combined Log format, returns line with 
-        error flag if line is not in this format.
+        Assumes each line in log file is in the Apache Combined Log format, returns None and logs warning message if 
+        line is not in this format.
         Args:
             line (str): line in log file in the Apache Combined Log format
         Returns:
@@ -57,18 +57,14 @@ class ParseLog(object):
         logger.debug('ip = %s', ip)
 
         # call ip_lookup(ip) to get org, lat, lon, and isp
-        org, isp, lat, lon = self.ip_lookup(ip)
-        result = {
-            'datetime': dt, 
-            'uri': uri,
-            'referer': referer,
-            'ip': ip,
-            'org': org,
-            'lat': lat,
-            'lon': lon,
-            'isp': isp
-        }
-        return result
+        lookup = self.ip_lookup(ip)
+        logger.debug('dt, uri, referer, ip = %s %s %s %s', str(dt), uri, referer, ip)
+        logger.debug('lookup = %s', str(lookup))
+        first = [dt, uri, referer, ip]
+        logger.debug('first = %s', str(first))
+        first.extend(lookup)
+        logger.debug('after extend first = %s', str(first))
+        return first
 
     def parse_apache_time(self, timestamp):
         d = parser.parse(timestamp.replace(':', ' ', 1))
@@ -78,8 +74,9 @@ class ParseLog(object):
         
     def ip_lookup(self, ip):
         # given ip, look up org, isp, lat and lon
-        # need some try-catch blocks here for exception handling
-        # for IPWhois need to catch IPDefinedError
+        # first, check if we have seen this ip before
+        if ip in self.iptable:
+            return self.iptable[ip]
         try:
             obj = IPWhois(ip, timeout = 10) # times out after 10 seconds  
             results = obj.lookup(get_referral=True)
@@ -97,8 +94,20 @@ class ParseLog(object):
         try:
             match = geolite2.lookup(ip)
             if match:
-                lat = match.location[0]
-                lon = match.location[1]
+                if match.location:
+                    if match.location[0]:
+                        lat = match.location[0]
+                    else:
+                        lat = None
+                        logger.warn('Set lat = None, geolite2 unable to find lat for IP %s', ip)
+                    if match.location[1]:
+                        lon = match.location[1]
+                    else:
+                        lon = None
+                        logger.warn('Set lon = None, geolite2 unable to find lon for IP %s', ip)
+                else:
+                    lat = lon = None
+                    logger.warn('Set lat & lon = None, geolite2 unable to find lat/lon for IP %s', ip)
             else:
                 # log unable to find lat/lon for this ip
                 logger.warn('Set lat & lon = None, geolite2 unable to find lat/lon for IP %s', ip)
@@ -108,7 +117,8 @@ class ParseLog(object):
             logger.error('Set lat & lon = None, ValueError from geolite2 for IP %s', ip)
             lat = lon = None
 
-        return org, isp, lat, lon   
+        self.iptable[ip] = [org, lat, lon, isp]
+        return self.iptable[ip]
 
 if __name__ == '__main__':
     parse = ParseLog() 

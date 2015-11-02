@@ -1,0 +1,37 @@
+2015-11-01 17:07:48,283 - app.parselog - ERROR - Whois lookup failed for '23.227.176.35'. from IPWhois on IP 23.227.176.35, setting org & isp to None
+2015-11-01 17:09:19,786 - app.parselog - ERROR - Whois lookup failed for '23.29.122.195'. from IPWhois on IP 23.29.122.195, setting org & isp to None
+2015-11-01 17:35:07,028 - app.parselog - ERROR - Whois lookup failed for '23.227.176.34'. from IPWhois on IP 23.227.176.34, setting org & isp to None
+2015-11-01 17:36:45,450 - app.parselog - ERROR - Whois lookup failed for '209.117.251.114'. from IPWhois on IP 209.117.251.114, setting org & isp to None
+2015-11-01 17:36:53,456 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-01 17:42:25,797 - app.parselog - ERROR - Whois lookup failed for '23.29.122.222'. from IPWhois on IP 23.29.122.222, setting org & isp to None
+2015-11-01 17:46:15,376 - app.parselog - ERROR - Whois lookup failed for '69.25.80.245'. from IPWhois on IP 69.25.80.245, setting org & isp to None
+2015-11-01 17:47:06,130 - app.parselog - WARNING - ParseLog could not parse this line:  141.223.91.115 - - [20/Feb/2014:03:56:00 -0800] "HEAD /svds.com/rockandroll/ HTTP/1.1" 200 - "_bit=5305ed50-0002c-026ea-261cf10a;domain=.bit.ly;expires=Tue Aug 19 11:56:00 2014;path=/; HttpOnly" "-"
+
+2015-11-01 17:49:42,915 - app.parselog - ERROR - Whois lookup failed for '70.46.245.126'. from IPWhois on IP 70.46.245.126, setting org & isp to None
+2015-11-01 18:00:24,949 - app.parselog - ERROR - Whois lookup failed for '205.144.218.234'. from IPWhois on IP 205.144.218.234, setting org & isp to None
+2015-11-01 18:03:57,501 - app.parselog - WARNING - ParseLog could not parse this line:  185.25.49.181 - - [25/Feb/2014:15:59:05 -0800] "GET /svds.com/rockandroll/js/).html(this.template_img(e))}});MusicApp.Views.SongView=Backbone.View.extend({initialize:function(){var e=[{ HTTP/1.1" 404 13125 "-" "Java/1.6.0_04"
+
+2015-11-01 18:04:44,130 - app.parselog - ERROR - Whois lookup failed for '198.143.129.170'. from IPWhois on IP 198.143.129.170, setting org & isp to None
+2015-11-01 18:10:44,958 - app.parselog - ERROR - Whois lookup failed for '65.46.187.134'. from IPWhois on IP 65.46.187.134, setting org & isp to None
+2015-11-01 18:12:56,224 - app.parselog - ERROR - Whois lookup failed for '173.23.110.115'. from IPWhois on IP 173.23.110.115, setting org & isp to None
+2015-11-01 18:16:07,591 - app.parselog - ERROR - Whois lookup failed for '71.5.110.140'. from IPWhois on IP 71.5.110.140, setting org & isp to None
+2015-11-01 18:24:48,144 - app.parselog - ERROR - Whois lookup failed for '184.154.121.213'. from IPWhois on IP 184.154.121.213, setting org & isp to None
+2015-11-01 18:25:32,667 - app.parselog - ERROR - Whois lookup failed for '198.143.143.138'. from IPWhois on IP 198.143.143.138, setting org & isp to None
+2015-11-01 18:26:41,570 - app.parselog - ERROR - Whois lookup failed for '107.155.118.94'. from IPWhois on IP 107.155.118.94, setting org & isp to None
+2015-11-01 18:27:23,886 - app.parselog - ERROR - Whois lookup failed for '107.155.79.235'. from IPWhois on IP 107.155.79.235, setting org & isp to None
+2015-11-01 18:34:59,997 - app.parselog - ERROR - Whois lookup failed for '209.121.225.168'. from IPWhois on IP 209.121.225.168, setting org & isp to None
+2015-11-01 18:46:55,950 - app.parselog - ERROR - Whois lookup failed for '207.8.11.198'. from IPWhois on IP 207.8.11.198, setting org & isp to None
+2015-11-01 18:51:05,854 - app.parselog - ERROR - Whois lookup failed for '66.226.253.140'. from IPWhois on IP 66.226.253.140, setting org & isp to None
+2015-11-01 18:58:10,723 - app.parselog - ERROR - Whois lookup failed for '66.85.147.138'. from IPWhois on IP 66.85.147.138, setting org & isp to None
+2015-11-01 19:06:35,746 - app.parselog - WARNING - ParseLog could not parse this line:  185.25.49.182 - - [08/Jul/2014:01:05:59 -0700] "GET /svds.com/rockandroll/js/libs/,Vo,t)},$o.html=function(n,t){return mt(n, HTTP/1.1" 301 353 "-" "Java/1.6.0_04"
+
+2015-11-01 19:06:35,747 - app.parselog - WARNING - ParseLog could not parse this line:  185.25.49.182 - - [08/Jul/2014:01:06:02 -0700] "GET /svds.com/rockandroll/js/libs/!=typeof e||Tt.test(e)||!x.support.htmlSerialize&&mt.test(e)||!x.support.leadingWhitespace&&yt.test(e)||At[(bt.exec(e)||[ HTTP/1.1" 301 321 "-" "Java/1.6.0_04"
+
+2015-11-01 19:17:50,848 - app.parselog - ERROR - Whois lookup failed for '198.143.146.178'. from IPWhois on IP 198.143.146.178, setting org & isp to None
+2015-11-01 19:19:50,079 - app.parselog - ERROR - Whois lookup failed for '204.93.188.79'. from IPWhois on IP 204.93.188.79, setting org & isp to None
+2015-11-01 19:19:50,906 - app.parselog - ERROR - Whois lookup failed for '204.93.188.249'. from IPWhois on IP 204.93.188.249, setting org & isp to None
+2015-11-01 19:20:32,993 - app.parselog - ERROR - Whois lookup failed for '23.29.122.212'. from IPWhois on IP 23.29.122.212, setting org & isp to None
+2015-11-01 19:20:43,487 - app.parselog - ERROR - Whois lookup failed for '209.147.118.173'. from IPWhois on IP 209.147.118.173, setting org & isp to None
+2015-11-01 19:20:43,785 - app.parselog - ERROR - Whois lookup failed for '209.147.118.93'. from IPWhois on IP 209.147.118.93, setting org & isp to None
+2015-11-01 19:20:46,409 - app.parselog - ERROR - Whois lookup failed for '209.147.118.7'. from IPWhois on IP 209.147.118.7, setting org & isp to None
+2015-11-01 19:20:46,701 - app.parselog - ERROR - Whois lookup failed for '209.147.118.135'. from IPWhois on IP 209.147.118.135, setting org & isp to None

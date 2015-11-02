@@ -9,13 +9,11 @@ import json
 def main():
   parse = ParseLog() 
   f = open('data/access.log','r')
-  fout = open('data/access.log.out', 'w')
   for line in f:
     result = parse.parse_line(line)
     if result:
-      json.dump(result, fout)
+      print(", ".join(str(i) for i in result))
   f.close()
-  fout.close()
 
 if __name__ == '__main__':
   main()
