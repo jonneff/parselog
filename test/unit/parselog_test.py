@@ -45,6 +45,14 @@ class TestParseLog(unittest.TestCase):
         self.assertEqual(exp_lat, lat)
         self.assertEqual(exp_lon, lon)
 
+    def test_ip_lookup_method_handles_non_ip(self):
+        org, lat, lon, isp = self.parse.ip_lookup('Beetlejuice')
+        exp_org = exp_isp = exp_lat = exp_lon = None
+        self.assertEqual(exp_org, org)
+        self.assertEqual(exp_isp, isp)
+        self.assertEqual(exp_lat, lat)
+        self.assertEqual(exp_lon, lon)
+
     def test_parse_line_method_handles_malformed_line(self):
         line = self.badlog.readline()
         result = self.parse.parse_line(line)

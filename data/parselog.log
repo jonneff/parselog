@@ -35,3 +35,59 @@
 2015-11-01 19:20:43,785 - app.parselog - ERROR - Whois lookup failed for '209.147.118.93'. from IPWhois on IP 209.147.118.93, setting org & isp to None
 2015-11-01 19:20:46,409 - app.parselog - ERROR - Whois lookup failed for '209.147.118.7'. from IPWhois on IP 209.147.118.7, setting org & isp to None
 2015-11-01 19:20:46,701 - app.parselog - ERROR - Whois lookup failed for '209.147.118.135'. from IPWhois on IP 209.147.118.135, setting org & isp to None
+2015-11-02 11:06:25,461 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:06:25,491 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:06:26,266 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:06:26,445 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:07:21,730 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:07:21,767 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:07:22,452 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:07:22,533 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:17:27,567 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:17:27,601 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:17:28,272 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:17:28,330 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:25:25,142 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:25:25,177 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:25:25,871 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:25:26,003 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:26:36,253 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:26:36,259 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:26:36,968 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:26:37,031 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:27:29,000 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:27:29,015 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:27:29,705 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:27:29,761 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:27:53,380 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:27:53,395 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:27:54,072 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:27:54,152 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:28:17,510 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:28:17,525 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:28:18,198 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:28:18,401 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:38:55,784 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:38:55,801 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:38:55,802 - app.parselog - ERROR - Set org & isp to None, ValueError from IPWhois for IP Beetlejuice
+2015-11-02 11:38:55,802 - app.parselog - ERROR - Set lat & lon = None, ValueError from geolite2 for IP Beetlejuice
+2015-11-02 11:38:56,618 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:38:56,844 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:40:15,341 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:40:15,348 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:40:15,349 - app.parselog - ERROR - Set org & isp to None, ValueError from IPWhois for IP Beetlejuice
+2015-11-02 11:40:15,350 - app.parselog - ERROR - Set lat & lon = None, ValueError from geolite2 for IP Beetlejuice
+2015-11-02 11:40:16,029 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:40:16,231 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:42:48,036 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:42:48,055 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:42:48,057 - app.parselog - ERROR - Set org & isp to None, ValueError from IPWhois for IP Beetlejuice
+2015-11-02 11:42:48,057 - app.parselog - ERROR - Set lat & lon = None, ValueError from geolite2 for IP Beetlejuice
+2015-11-02 11:42:48,907 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:42:49,225 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
+2015-11-02 11:43:18,640 - app.parselog - ERROR - IPv4 address '0.0.0.0' is already defined as 'This Network' via 'RFC 1122, Section 3.2.1.3'. from IPWhois on IP 0.0.0.0, setting org & isp to None
+2015-11-02 11:43:18,663 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 0.0.0.0
+2015-11-02 11:43:18,664 - app.parselog - ERROR - Set org & isp to None, ValueError from IPWhois for IP Beetlejuice
+2015-11-02 11:43:18,664 - app.parselog - ERROR - Set lat & lon = None, ValueError from geolite2 for IP Beetlejuice
+2015-11-02 11:43:19,348 - app.parselog - WARNING - Set lat & lon = None, geolite2 unable to find lat/lon for IP 46.246.49.254
+2015-11-02 11:43:19,407 - app.parselog - WARNING - ParseLog could not parse this line:  198.0.200. - - $$$[14/2014:093650 -080] "GET /svds.com HT/1.1"1 241"ht/rockandroll/" la/5.0 (Macintosh; Intel Mac WebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650
