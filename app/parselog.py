@@ -21,6 +21,18 @@ class ParseLog(object):
     def __init__(self): 
         self.iptable = {}
         
+    def parse_write(self, line):
+        """
+        Parse log line and write result to standard out.
+        Args:
+            line (str): line in log file in the Apache Combined Log format
+        Returns:
+            None
+        """
+        result = self.parse_line(line)
+        if result:
+          print(", ".join(str(i) for i in result))
+    
     def parse_line(self, line): 
         """
         Parse log line to get date & time, uri, referer, ip address.
