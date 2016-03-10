@@ -1,4 +1,4 @@
-The concepts demonstrated in this code include logging, cacheing and multithreading with geolocation of IP addresses.  
+The concepts demonstrated in this code include test driven development, logging, cacheing and multithreading with geolocation of IP addresses.  
 
 This repository contains my solution to the coding challenge listed below.  Code for running the application (run.sh and execute_parselog.py) are located at the top level, along with test coverage statistics and package files.  The parselog applicaiton source is under the app/ folder while tests are under test/.  The data/ folder contains input and output files along with parselog's log, called parselog.log.  
 

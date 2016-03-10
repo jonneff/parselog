@@ -7,6 +7,7 @@ from datetime import datetime
 from dateutil import tz
 from ipwhois import IPDefinedError, ASNLookupError, ASNRegistryError, WhoisLookupError, HostLookupError, BlacklistError
 import logging
+from multiprocessing.dummy import Lock
 
 
 logger = logging.getLogger(__name__)
@@ -20,6 +21,7 @@ logger.addHandler(handler)
 class ParseLog(object):
     def __init__(self): 
         self.iptable = {}
+        self.lock = Lock()
         
     def parse_write(self, line):
         """
@@ -31,7 +33,9 @@ class ParseLog(object):
         """
         result = self.parse_line(line)
         if result:
-          print(", ".join(str(i) for i in result))
+            self.lock.acquire()
+            print(", ".join(str(i) for i in result))
+            self.lock.release()
     
     def parse_line(self, line): 
         """

@@ -6,6 +6,8 @@
 from app.parselog import ParseLog
 import json
 from multiprocessing.dummy import Pool as ThreadPool # easy multithreading
+from multiprocessing.dummy import Process
+from multiprocessing.dummy import Lock 
 
 def main():
   parse = ParseLog() 
