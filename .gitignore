@@ -1,7 +1,10 @@
 .DS_Store
+req.txt
+spec-file.txt
 .tox
 unittest2*.egg
 *.pyc
+app/*.pyc
 .directory
 venv/
 *.log
