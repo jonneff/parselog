@@ -4,7 +4,8 @@ spec-file.txt
 .tox
 unittest2*.egg
 *.pyc
-app/*.pyc
+app/__init__.pyc
+app/parselog.pyc
 .directory
 venv/
 *.log

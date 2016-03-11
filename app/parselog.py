@@ -96,7 +96,8 @@ class ParseLog(object):
             results = obj.lookup(get_referral=True)
             org = results['nets'][-1]['description']
             isp = results['nets'][0]['description']
-        except (IPDefinedError, ASNLookupError, ASNRegistryError, WhoisLookupError, HostLookupError, BlacklistError) as e:
+        except (IPDefinedError, ASNLookupError, ASNRegistryError, WhoisLookupError, 
+                HostLookupError, BlacklistError, AttributeError) as e:
             # log bad ip and error
             logger.error('%s from IPWhois on IP %s, setting org & isp to None', e, ip)
             org = isp = None 
